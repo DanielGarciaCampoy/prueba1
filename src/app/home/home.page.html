@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item> <!--para que no salga linea: lines="none"-->
+    <ion-label position="fixed">Nombre</ion-label>
+    <ion-input placeholder="Introduce el nombre" [(ngModel)]="name" required></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="addPerson(name)">Añadir</ion-button>
+  <div>
+    <ion-text id="empty-list" color="warning" *ngIf="people.length==0">No existen personas aún</ion-text>
+  </div>
+  <!--<ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <app-person *ngFor="let person of people" [data] = "person" (onremove)="removePerson($event)"></app-person>
+      </ion-col>
+    </ion-row>
+  </ion-grid>-->
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let person of people" size="12" size-sm="4">
+        <app-person [data]="person" (onremove)="removePerson($event)"></app-person>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
