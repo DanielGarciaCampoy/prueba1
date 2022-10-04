@@ -20,13 +20,6 @@
   <div>
     <ion-text id="empty-list" color="warning" *ngIf="people.length==0">No existen personas aún</ion-text>
   </div>
-  <!--<ion-grid>
-    <ion-row>
-      <ion-col size="4">
-        <app-person *ngFor="let person of people" [data] = "person" (onremove)="removePerson($event)"></app-person>
-      </ion-col>
-    </ion-row>
-  </ion-grid>-->
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let person of people" size="12" size-sm="4">
